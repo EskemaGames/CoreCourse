@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
 
 
 namespace EG
@@ -8,7 +7,7 @@ namespace EG
     {
 
         [System.Serializable]
-        public class InstructionsController : IRestart
+        public class InstructionsSystem : IRestart
         {
             //assume an initial amount of 50 to avoid changed the size often
             private Queue<Instruction> instructions = new Queue<Instruction>(50);
@@ -33,8 +32,11 @@ namespace EG
 
             public void IDestroy()
             {
-                EG_Core.Self().StopCoreTimerWithID(timerId);
-                
+                if (EG_Core.Self() != null)
+                {
+                    EG_Core.Self().StopCoreTimerWithID(timerId);
+                }
+
                 onAllInstructionsProcessedAndExecuted = null;
                 onCompleteInstruction = null;
                 onErrorInstruction = null;
@@ -113,7 +115,7 @@ namespace EG
                 timerId = EG_Core.Self().StartCoreTimerId(0.08f, this,
                     cacheAction =>
                     {
-                        (cacheAction.Context as InstructionsController).RestartAndCleanInstructions();
+                        (cacheAction.Context as InstructionsSystem).RestartAndCleanInstructions();
                     });
             }
             
@@ -131,7 +133,7 @@ namespace EG
                 timerId = EG_Core.Self().StartCoreTimerId(0.08f, this,
                     cacheAction =>
                     {
-                        (cacheAction.Context as InstructionsController).DestroyAndCleanInstructions();
+                        (cacheAction.Context as InstructionsSystem).DestroyAndCleanInstructions();
                     });
             }
 
@@ -193,7 +195,7 @@ namespace EG
                 timerId = EG_Core.Self().StartCoreTimerId(0.07f, this,
                     cacheAction =>
                     {
-                        (cacheAction.Context as InstructionsController).ProcessInstruction();
+                        (cacheAction.Context as InstructionsSystem).ProcessInstruction();
                     });
             }
 
@@ -222,7 +224,7 @@ namespace EG
                 timerId = EG_Core.Self().StartCoreTimerId(0.07f, this,
                     cacheAction =>
                     {
-                        (cacheAction.Context as InstructionsController).OnInstructionExecuted();
+                        (cacheAction.Context as InstructionsSystem).OnInstructionExecuted();
                     });
             }
 
@@ -233,7 +235,7 @@ namespace EG
                 onErrorInstruction = anOnErrorInstruction;
                 onCompleteInstruction = aOnCompleteInstruction;
                 
-                if (anInstruction.ExecuteInstruction())
+                if (anInstruction.DoExecuteInstruction())
                 {
                     onCompleteInstruction?.Invoke();
                     isRunning = false;
@@ -268,12 +270,8 @@ namespace EG
             }
 
             #endregion
-
-
-    
-
+            
         }
-
-
+        
     }
 }

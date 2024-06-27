@@ -33,9 +33,9 @@ namespace EG
 
             // Core Services
             // ------------------------------------------------
-            private EG_TimerController timer = null;
-            private EG_TimerController timerCore = null;
-            private EG_SceneChanger sceneChanger = null; //NEW
+            private EG_TimerSystem timer = null;
+            private EG_TimerSystem timerCore = null;
+            private EG_SceneChangerSystem sceneChangerSystem = null; //NEW
             
             private List<IDestroyable> destroyableSystems = new List<IDestroyable>(10);
             private List<IUpdateTimedSystems> updateTimedSystems = new List<IUpdateTimedSystems>(3);
@@ -57,7 +57,7 @@ namespace EG
 
             public bool Is30FPS => setGame30FPS;
             
-            public EG_Scene CurrentScene => sceneChanger.CurrentScene;
+            public EG_Scene CurrentScene => sceneChangerSystem.CurrentScene;
 
             #endregion
 
@@ -171,19 +171,19 @@ namespace EG
             //in this "manager" class
             private void LoadCoreSystems()
             {
-                timerCore = new EG_TimerController();
+                timerCore = new EG_TimerSystem();
                 System.GC.KeepAlive(timerCore);
                 timerCore.InitTimerManager(totalTimersCore);
                 
-                timer = new EG_TimerController();
+                timer = new EG_TimerSystem();
                 System.GC.KeepAlive(timer);
                 timer.InitTimerManager(totalTimersPooled);
                 
-                sceneChanger = new EG_SceneChanger();
+                sceneChangerSystem = new EG_SceneChangerSystem();
                 
                 destroyableSystems.Add(timerCore);
                 destroyableSystems.Add(timer);
-                destroyableSystems.Add(sceneChanger);
+                destroyableSystems.Add(sceneChangerSystem);
                 
                 AddUpdatableSystem(timerCore);
                 AddUpdatableSystem(timer);
@@ -208,12 +208,12 @@ namespace EG
             //change to a new scene
             public void LoadNewScene(EG_Scene aScene, System.Action aOnSceneLoaded)
             {
-                sceneChanger.LoadNewScene(aScene, aOnSceneLoaded);
+                sceneChangerSystem.LoadNewScene(aScene, aOnSceneLoaded);
             }
 
             public void LoadNewSceneAdditive(EG_Scene aScene, System.Action aOnSceneLoaded)
             {
-                sceneChanger.LoadNewSceneAdditive(aScene, aOnSceneLoaded);
+                sceneChangerSystem.LoadNewSceneAdditive(aScene, aOnSceneLoaded);
             }
 
             #endregion

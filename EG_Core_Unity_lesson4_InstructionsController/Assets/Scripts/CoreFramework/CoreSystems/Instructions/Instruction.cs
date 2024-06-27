@@ -50,7 +50,7 @@ namespace EG
             #endregion
             
 
-            public virtual void Init() { }
+            public virtual void DoInit() { }
 
             public virtual void Destroy()
             {
@@ -79,12 +79,12 @@ namespace EG
             /// also remember to put the callback to finish the instruction
             /// </summary>
             /// <returns></returns>
-            public abstract bool ExecuteInstruction();
+            public abstract bool DoExecuteInstruction();
             
             /// <summary>
             /// After the above execute function, call the completion when the instruction is ready to be finished
             /// </summary>
-            public void ExecuteOnCompletion()
+            public void DoExecuteOnCompletion()
             {
                 onCompleteInstruction?.Invoke(this);
                 onCompleteInstruction = null;
