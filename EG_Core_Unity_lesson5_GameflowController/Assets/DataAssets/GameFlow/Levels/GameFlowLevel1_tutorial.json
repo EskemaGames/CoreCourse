@@ -1,0 +1,370 @@
+{
+    "LevelFlow": {
+        "Id": "GameplayTutorial",
+        "Flow": [
+            {
+                "Id": "Intro",
+                "Loopable": false,
+                "Actions": [
+                    {
+                        "PoolTypeStr": "Intro",
+                        "TriggerConditions": [],
+                        "ResultToExecute": [
+                            {
+                                "ClassName": "IntroLevelInstruction",
+                                "ParametersToParse": [
+                                    "Number, 1",
+                                    "Description, Mission1_Intro",
+                                    "DescriptionShort, Mission1_Short_Intro",
+                                    "PoolToExecute,Tutorial"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "Start",
+                "Loopable": false,
+                "Actions": [
+                    {
+                        "PoolTypeStr": "Start",
+                        "TriggerConditions": [],
+                        "ResultToExecute": [
+                            {
+                                "ClassName": "InitGameInstruction",
+                                "ParametersToParse": [
+                                    "Number, 2",
+                                    "TotalEnemiesAtBase, 15",
+                                    "PoolToExecute,Checks"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "Restart",
+                "Loopable": false,
+                "Actions": [
+                    {
+                        "PoolTypeStr": "Restart",
+                        "TriggerConditions": [],
+                        "ResultToExecute": [
+                            {
+                                "ClassName": "RestartGameInstruction",
+                                "ParametersToParse": [
+                                    "Number, 1",
+                                    "PoolToExecute,Start"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "Tutorial",
+                "Loopable": false,
+                "Actions": [
+                    {
+                        "PoolTypeStr": "Tutorial",
+                        "TriggerConditions": [],
+                        "ResultToExecute": [
+                            {
+                                "ClassName": "TutorialIntro1Instruction",
+                                "ParametersToParse": [
+                                    "Restartable, false",
+                                    "TimeToShow, 0.4",
+                                    "TotalMessages, 1",
+                                    "Message1, TutorialIntro1"
+                                ]
+                            },
+                            {
+                                "ClassName": "TutorialIntro2Instruction",
+                                "ParametersToParse": [
+                                    "Restartable, false",
+                                    "TimeToShow, 0.2",
+                                    "TotalMessages, 1",
+                                    "Message1, TutorialIntro2"
+                                ]
+                            },
+                            {
+                                "ClassName": "TutorialIntro3Instruction",
+                                "ParametersToParse": [
+                                    "Restartable, false",
+                                    "TimeToShow, 0.2",
+                                    "TotalMessages, 1",
+                                    "Message1, TutorialIntro3",
+                                    "PoolToExecute,Start"
+                                ]
+                            },
+                            {
+                                "ClassName": "TutorialBuilding1Instruction",
+                                "ParametersToParse": [
+                                    "Restartable, false",
+                                    "TimeToShow, 0.2",
+                                    "InitialValue, 30",
+                                    "TotalMessages, 1",
+                                    "Message1, TutorialBuilding1"
+                                ]
+                            },
+                            {
+                                "ClassName": "TutorialBuilding2Instruction",
+                                "ParametersToParse": [
+                                    "Restartable, false",
+                                    "TimeToShow, 0.1",
+                                    "TotalMessages, 1",
+                                    "Message1, TutorialBuilding2"
+                                ]
+                            },
+                            {
+                                "ClassName": "TutorialBuilding3Instruction",
+                                "ParametersToParse": [
+                                    "Restartable, false",
+                                    "TimeToShow, 0.1",
+                                    "TotalMessages, 1",
+                                    "Message1, TutorialBuilding3",
+                                    "PoolToExecute,GameLoop"
+                                ]
+                            },
+                            {
+                                "ClassName": "TutorialTowerDisabled1Instruction",
+                                "ParametersToParse": [
+                                    "Restartable, false",
+                                    "TimeToShow, 0.2",
+                                    "TotalMessages, 1",
+                                    "Message1, TutorialTowerDisabled1"
+                                ]
+                            },
+                            {
+                                "ClassName": "TutorialTowerDisabled2Instruction",
+                                "ParametersToParse": [
+                                    "Restartable, false",
+                                    "TimeToShow, 0.1",
+                                    "TotalMessages, 1",
+                                    "Message1, TutorialTowerDisabled2",
+                                    "PoolToExecute,GameLoop"
+                                ]
+                            },
+                            {
+                                "ClassName": "TutorialInfo1Instruction",
+                                "ParametersToParse": [
+                                    "Restartable, false",
+                                    "TimeToShow, 0.3",
+                                    "TotalMessages, 1",
+                                    "Message1, TutorialInfo1",
+                                    "PoolToExecute,GameLoop"
+                                ]
+                            },
+                            {
+                                "ClassName": "TutorialRepair1Instruction",
+                                "ParametersToParse": [
+                                    "Restartable, false",
+                                    "TimeToShow, 0.3",
+                                    "TotalMessages, 1",
+                                    "Message1, TutorialRepair1"
+                                ]
+                            },
+                            {
+                                "ClassName": "TutorialRepair2Instruction",
+                                "ParametersToParse": [
+                                    "Restartable, false",
+                                    "TimeToShow, 0.3",
+                                    "TotalMessages, 1",
+                                    "Message1, TutorialRepair2",
+                                    "PoolToExecute,GameLoop"
+                                ]
+                            },
+                            {
+                                "ClassName": "TutorialSkills1Instruction",
+                                "ParametersToParse": [
+                                    "Restartable, false",
+                                    "TimeToShow, 0.3",
+                                    "TotalMessages, 2",
+                                    "Message1, TutorialSkills1",
+                                    "Message2, TutorialSkills2",
+                                    "PoolToExecute,GameLoop"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "Building",
+                "Loopable": false,
+                "Actions": [
+                    {
+                        "PoolTypeStr": "Building",
+                        "TriggerConditions": [],
+                        "ResultToExecute": [
+                            {
+                                "ClassName": "BuildNewTowersInstruction",
+                                "ParametersToParse": [
+                                    "Restartable, false",
+                                    "Number, 1",
+                                    "TimeToShow, 4.5",
+                                    "NewFunds, 20",
+                                    "Message, NewResourcesAvailable"
+                                ]
+                            },
+                            {
+                                "ClassName": "ContinueGameInstruction",
+                                "ParametersToParse": [
+                                    "Restartable, false",
+                                    "Number, 2",
+                                    "PoolToExecute,GameLoop"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "Checks",
+                "Loopable": false,
+                "Actions": [
+                    {
+                        "PoolTypeStr": "Checks",
+                        "TriggerConditions": [
+                        ],
+                        "ResultToExecute": [
+                            {
+                                "ClassName": "ModifyWavesInstruction",
+                                "ParametersToParse": [
+                                    "Number, 1",
+                                    "MaximumWavesToCheck, 100",
+                                    "TotalWavesPassedToIncreasedDifficulty, 1",
+                                    "TotalWavesPassedForIncrementalFallOff, 4",
+                                    "ValueFalloff, 1",
+                                    "TotalAttributes, 3",
+                                    "Attribute1, HealthAttr",
+                                    "Attribute2, MovementSpeedAttr",
+                                    "Attribute3, RotationAttr",
+                                    "Formula1, Percentage",
+                                    "Formula2, Percentage",
+                                    "Formula3, Percentage",
+                                    "ValueReduction1, -2.2",
+                                    "ValueReduction2, -2.2",
+                                    "ValueReduction3, -2.2",
+                                    "PoolToExecute, GameLoop"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "GameLoop",
+                "Loopable": true,
+                "Actions": [
+                    {
+                        "PoolTypeStr": "GameLoop",
+                        "TriggerConditions": [
+                            {
+                                "ClassName": "CheckDifficultyWaveStatusInstruction",
+                                "ParametersToParse": [
+                                    "TotalWavesPassedToIncreasedDifficulty, 2",
+                                    "MaximumWavesToCheck, 500"
+                                ]
+                            }],
+                        "ResultToExecute": [
+                            {
+                                "ClassName": "ModifyWavesDifficultyInstruction",
+                                "ParametersToParse": [
+                                    "Number, 1",
+                                    "TotalWavesPassedForIncrementalFallOff, 3",
+                                    "ValueFalloff, 1",
+                                    "TotalAttributes, 1",
+                                    "Attribute1, Health",
+                                    "Formula1, Percentage",
+                                    "ValueReduction1, -2.0"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "PoolTypeStr": "GameLoop",
+                        "TriggerConditions": [
+                            {
+                                "ClassName": "CheckAllWavesCompletedInstruction",
+                                "ParametersToParse": [
+                                ]
+                            }],
+                        "ResultToExecute": [
+                            {
+                                "ClassName": "FinishedAllWavesInstruction",
+                                "ParametersToParse": [
+                                    "Number, 2"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "PoolTypeStr": "GameLoop",
+                        "TriggerConditions": [
+                            {
+                                "ClassName": "CheckGameoverInstruction",
+                                "ParametersToParse": [
+                                ]
+                            }],
+                        "ResultToExecute": [
+                            {
+                                "ClassName": "GameoverLevelInstruction",
+                                "ParametersToParse": [
+                                    "Number, 3"
+                                ]
+                            }
+                        ]
+                    }
+
+                ]
+            },
+            {
+                "Id": "Finish",
+                "Loopable": false,
+                "Actions": [
+                    {
+                        "PoolTypeStr": "Finish",
+                        "TriggerConditions": [],
+                        "ResultToExecute": [
+                            {
+                                "ClassName": "FinishLevelTutorialInstruction",
+                                "ParametersToParse": [
+                                    "Number, 1",
+                                    "Description, MissionNormalEnd",
+                                    "NameItem, GatlingGun",
+                                    "ImgNameItem, tower_gatling_full",
+                                    "Tokens, 10",
+                                    "PoolToExecute, None"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "Gameover",
+                "Loopable": false,
+                "Actions": [
+                    {
+                        "PoolTypeStr": "Gameover",
+                        "TriggerConditions": [],
+                        "ResultToExecute": [
+                            {
+                                "ClassName": "GameoverInstruction",
+                                "ParametersToParse": [
+                                    "Number, 1",
+                                    "Restartable, false",
+                                    "Description, MissionNormalEnd",
+                                    "PoolToExecute, None"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+
+            }
+        ]
+    }
+}
