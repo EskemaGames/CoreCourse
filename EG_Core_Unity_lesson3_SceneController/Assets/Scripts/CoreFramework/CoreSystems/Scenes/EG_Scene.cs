@@ -9,7 +9,6 @@
 //	This is the license used by Wikipedia, and is recommended for materials that would benefit from incorporating content from Wikipedia and similarly licensed projects.
 
 
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -44,13 +43,18 @@ namespace EG
             }
 
 
-            public virtual void Configure(EG_SceneData aData) { }
-            
-            /// Called before Entering on a new Scene
-            public virtual void OnEnter(bool aIsAdditive = false)
+            public void SetEnterCompleted()
             {
-                additive = aIsAdditive;
                 EnterCompleted = true;
+            }
+            
+            public virtual void Configure(EG_SceneData aData) { }
+
+
+            /// Called before Entering on a new Scene
+            public virtual void OnEnter(bool anAdditive = false)
+            {
+                additive = anAdditive;
             }
 
             /// Called before Exit from a Scene
@@ -73,7 +77,7 @@ namespace EG
                     : SceneManager.LoadSceneAsync(sceneName);
                 WaitForLoadAsync();
             }
-            
+
             private void WaitForLoadAsync()
             {
                 float progress;
@@ -84,32 +88,29 @@ namespace EG
 
                     onLoadingProgressUpdate?.Invoke(progress);
 
-                    EG_Core.Self().StartTimer(CoreConstants.CORE_STEP, true, this,
+                    EG_Core.Self().StartCoreTimer(CoreConstants.CORE_STEP, true, this,
                         cacheAction => { (cacheAction.Context as EG_Scene).WaitForLoadAsync(); });
 
                     return;
                 }
-
                 
                 progress = 1f;
 
                 onLoadingProgressUpdate?.Invoke(progress);
-
-                EnterCompleted = true;
-
-                OnSceneLoaded();
-
                 onLoadingProgressUpdate = null;
-
+                
+                OnSceneLoaded();
             }
 
             #endregion
 
 
-            /// Do something with the scene fully loaded (if needed in derived classes)
+            /// <summary>
+            /// EMPTY parent function, implement as needed on each scene
+            /// </summary>
             protected virtual void OnSceneLoaded()
             {
-
+                
             }
 
 

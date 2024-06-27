@@ -34,7 +34,7 @@ namespace EG
     {
 
         [System.Serializable]
-        public class EG_TimerController : IDestroyable, IUpdateTimedSystems, IPauseGame
+        public class EG_TimerSystem : IDestroyable, IUpdateTimedSystems, IPauseGame
         {
             private EG_Timer[] timerList;
 

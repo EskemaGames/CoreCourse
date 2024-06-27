@@ -5,7 +5,7 @@ namespace EG
 {
     namespace Core.Scenes
     {
-        public class EG_SceneChanger : IDestroyable
+        public class EG_SceneChangerSystem : IDestroyable
         {
             public EG_Scene CurrentScene => currentScene;
 
@@ -41,7 +41,7 @@ namespace EG
             public void LoadNewScene(EG_Scene aScene, System.Action aOnSceneLoaded)
             {
                 if (isChangingScene) return;
-
+                
                 onSceneLoaded = aOnSceneLoaded;
                 
                 isChangingScene = true;
@@ -83,7 +83,7 @@ namespace EG
 
                     return;
                 }
-
+                
                 //if no other previous scene was in our system we will be directed here
                 //otherwise the clean function will take care of continuing
                 scenesStack.Enqueue(aScene);
@@ -107,7 +107,8 @@ namespace EG
 
                     return;
                 }
-                
+
+             
                 //
                 //now ALL previous scenes has been unloaded, so time to load the new one
                 //
@@ -137,7 +138,7 @@ namespace EG
                 if (!currentScene.ExitCompleted)
                 {
                     EG_Core.Self().StartCoreTimer(CoreConstants.CORE_STEP, true, this,
-                        cacheAction => { (cacheAction.Context as EG_SceneChanger).WaitToExitSceneCompleteInList(); });
+                        cacheAction => { (cacheAction.Context as EG_SceneChangerSystem).WaitToExitSceneCompleteInList(); });
 
                     return;
                 }
@@ -155,7 +156,7 @@ namespace EG
                 if (!currentScene.EnterCompleted)
                 {
                     EG_Core.Self().StartCoreTimer(CoreConstants.CORE_STEP, true, this,
-                        cacheAction => { (cacheAction.Context as EG_SceneChanger).WaitToLoadNewSceneComplete(); });
+                        cacheAction => { (cacheAction.Context as EG_SceneChangerSystem).WaitToLoadNewSceneComplete(); });
 
                     return;
                 }
