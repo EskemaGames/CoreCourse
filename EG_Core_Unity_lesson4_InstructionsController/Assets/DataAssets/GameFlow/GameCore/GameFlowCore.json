@@ -1,0 +1,142 @@
+{
+    "LevelFlow": {
+        "Id": "MainGameFlow",
+        "Flow": [
+            {
+                "Id": "StartFramework",
+                "Loopable": false,
+                "Actions": [
+                    {
+                        "TriggerConditions": [],
+                        "ResultToExecute": [
+                            {
+                                "ClassName": "LoadCoreSceneInstruction",
+                                "ParametersToParse": [
+                                    "Number, 1",
+                                    "SceneName, CoreInitScene",
+                                    "Bootstrap, JsonActions/ActionsBoot",
+                                    "NextFlowAction, FlowBootScene",
+                                    "FlowToExecute, None"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "FlowBootScene",
+                "Loopable": false,
+                "Actions": [
+                    {
+                        "TriggerConditions": [],
+                        "ResultToExecute": [
+                            {
+                                "ClassName": "CheckSceneToLoadInstruction",
+                                "ParametersToParse": [
+                                    "Number, 1",
+                                    "TotalScenes, 2",
+                                    "DecisionId, 0",
+                                    "SceneName1, MenuScene",
+                                    "SceneName2, MenuSceneGamepad",
+                                    "Bootstrap1, JsonActions/ActionsMenu",
+                                    "Bootstrap2, JsonActions/ActionsMenuGamepad",
+                                    "UnityScene1, MenuSceneUnity",
+                                    "UnityScene2, MenuSceneUnity",
+                                    "FlowToExecute, None"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "FlowMenuSceneToPlayAdventure",
+                "Loopable": false,
+                "Actions": [
+                    {
+                        "TriggerConditions": [],
+                        "ResultToExecute": [
+                            {
+                                "ClassName": "LoadSceneInstruction",
+                                "ParametersToParse": [
+                                    "Number, 1",
+                                    "SceneName, GameplayScene",
+                                    "UnityScene, GameplaySceneUnity1",
+                                    "NextFlowAction, None",
+                                    "Bootstrap, JsonActions/ActionsGameplayAdventure",
+                                    "FlowToExecute, None"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "FlowMenuSceneToPlayRetroAdventure",
+                "Loopable": false,
+                "Actions": [
+                    {
+                        "TriggerConditions": [],
+                        "ResultToExecute": [
+                            {
+                                "ClassName": "LoadSceneInstruction",
+                                "ParametersToParse": [
+                                    "Number, 1",
+                                    "SceneName, GameplayScene",
+                                    "UnityScene, GameplaySceneUnity1",
+                                    "NextFlowAction, None",
+                                    "Bootstrap, JsonActions/ActionsGameplayAdventure",
+                                    "FlowToExecute, None"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "FlowMenuSceneToPlayAdventureTutorial",
+                "Loopable": false,
+                "Actions": [
+                    {
+                        "TriggerConditions": [],
+                        "ResultToExecute": [
+                            {
+                                "ClassName": "LoadSceneInstruction",
+                                "ParametersToParse": [
+                                    "Number, 1",
+                                    "SceneName, GameplayScene",
+                                    "UnityScene, GameplaySceneUnity1",
+                                    "NextFlowAction, None",
+                                    "Bootstrap, JsonActions/ActionsGameplayAdventureTutorial",
+                                    "FlowToExecute, None"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "FlowExitFromGameplay",
+                "Loopable": false,
+                "Actions": [
+                    {
+                        "TriggerConditions": [],
+                        "ResultToExecute": [
+                            {
+                                "ClassName": "LoadSceneNoFlowInstruction",
+                                "ParametersToParse": [
+                                    "Number, 1",
+                                    "SceneName, MenuScene",
+                                    "UnityScene, MenuSceneUnity",
+                                    "Bootstrap, JsonActions/ActionsMenu",
+                                    "FlowToExecute, None"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+
+        ]
+    }
+}
