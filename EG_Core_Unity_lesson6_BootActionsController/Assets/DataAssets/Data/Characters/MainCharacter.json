@@ -1,0 +1,130 @@
+﻿{
+  "Characters": [
+    {
+      "AnimationNameId": "MainCharacter1",
+      "NameId": "MainCharacter1",
+      "Quality" : "Light",
+      "GroupType": "Players",
+      "Level" : "Low",
+      "UseBehaviour": false,
+      "DetectionComponentName": "SphereDetectorMainCharacter",
+      "Attributes": [
+        {
+          "Value": 1.0,
+          "MinValue": 1,
+          "MaxValue": 1.0,
+          "FormulaType": "Addition",
+          "AttributeName": "AmountMovementAttr"
+        },
+        {
+          "Value": 0.7,
+          "MinValue": 0.1,
+          "MaxValue": 1.5,
+          "FormulaType": "Addition",
+          "AttributeName": "MovementTweenedTimeAttr"
+        },
+        {
+          "Value": 1.4,
+          "MinValue": 1.4,
+          "MaxValue": 1.4,
+          "FormulaType": "Addition",
+          "AttributeName": "AnimationMultiplierSpeedAttr"
+        },
+        {
+          "Value": 8.0,
+          "MinValue": 1,
+          "MaxValue": 8.0,
+          "FormulaType": "Addition",
+          "AttributeName": "RotationAttr"
+        },
+        {
+          "Value": 100,
+          "MinValue": 0,
+          "MaxValue": 100,
+          "FormulaType": "Addition",
+          "AttributeName": "HealthAttr",
+          "UpdateLevels": [
+            {
+              "IncreaseStep": 20.0,
+              "Value" : 1
+            }
+          ]
+        },
+        {
+          "Value": 100,
+          "MinValue": 0,
+          "MaxValue": 100,
+          "FormulaType": "Addition",
+          "AttributeName": "StaminaAttr",
+          "UpdateLevels": [
+            {
+              "IncreaseStep": 20.0,
+              "Value" : 1
+            }
+          ]
+        },
+        {
+          "Value": 14.0,
+          "MinValue": 1.0,
+          "MaxValue": 100.0,
+          "FormulaType": "Addition",
+          "AttributeName": "AttackPowerAttr"
+        },
+        {
+          "Value": 12.0,
+          "MinValue": 1.0,
+          "MaxValue": 100.0,
+          "FormulaType": "Addition",
+          "AttributeName": "DefenseAttr"
+        },
+        {
+          "Value": 1.0,
+          "MinValue": 0.0,
+          "MaxValue": 100.0,
+          "FormulaType": "Addition",
+          "AttributeName": "CriticalAttr"
+        },
+        {
+          "Value": 1.0,
+          "MinValue": 0.0,
+          "MaxValue": 1.0,
+          "FormulaType": "Addition",
+          "AttributeName": "LivesAttr"
+        }
+
+      ],
+      "Components": [
+        {
+          "ClassName": "CharacterAnimationsCharacters"
+        },
+        {
+          "ClassName": "MovementTransformTweenedComponent"
+        },
+        {
+          "ClassName": "MonobehaviourDetectionMainCharacterComponent"
+        },
+        {
+          "ClassName": "HealthComponent"
+        },
+        {
+          "ClassName": "EnergyComponent"
+        },
+        {
+          "ClassName": "DeathMainCharacterComponent"
+        },
+        {
+          "ClassName": "InventoryComponent"
+        },
+        {
+          "ClassName": "PlayerHitComponent"
+        },
+        {
+          "ClassName": "PlayerComponent"
+        },
+        {
+          "ClassName": "EntityInputActionsComponent"
+        }
+      ]
+    }
+  ]
+}
