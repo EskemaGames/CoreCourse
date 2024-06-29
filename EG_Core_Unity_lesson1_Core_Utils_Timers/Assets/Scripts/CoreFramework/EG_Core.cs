@@ -32,8 +32,8 @@ namespace EG
 
             // Core Services
             // ------------------------------------------------
-            private EG_TimerController timer = null;
-            private EG_TimerController timerCore = null;
+            private EG_TimerSystem timer = null;
+            private EG_TimerSystem timerCore = null;
             private List<IDestroyable> destroyableSystems = new List<IDestroyable>(10);
             private List<IUpdateTimedSystems> updateTimedSystems = new List<IUpdateTimedSystems>(3);
 
@@ -162,13 +162,13 @@ namespace EG
             //in this "manager" class
             private void LoadCoreSystems()
             {
-                timerCore = new EG_TimerController();
+                timerCore = new EG_TimerSystem();
                 System.GC.KeepAlive(timerCore);
-                timerCore.InitTimerManager(totalTimersCore);
+                timerCore.InitTimerSystem(totalTimersCore);
                 
-                timer = new EG_TimerController();
+                timer = new EG_TimerSystem();
                 System.GC.KeepAlive(timer);
-                timer.InitTimerManager(totalTimersPooled);
+                timer.InitTimerSystem(totalTimersPooled);
 
                 destroyableSystems.Add(timerCore);
                 destroyableSystems.Add(timer);
@@ -215,7 +215,7 @@ namespace EG
             {
                 return timer.GetUnusedTimer();
             }
-
+            
             public void StartTimer(float aTimerValue, object aContext, Action<EG_Timer> aNewcallback)
             {
                 timer.StartTimer(aTimerValue, aContext, aNewcallback);
