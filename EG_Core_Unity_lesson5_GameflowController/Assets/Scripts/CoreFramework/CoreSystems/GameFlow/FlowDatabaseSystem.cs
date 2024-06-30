@@ -66,8 +66,8 @@ namespace EG
                 //
                 // now, this is a perfect place to talk about defensive programming
                 // I'm NOT defending anything here, cause if I pass an incorrect string
-                // the game MUST crash, cause this is a design error (the id passed doesn't exist)
-                // this way we can easily identify the bug and correct it
+                // the game MUST crash, cause this is a design error (the id passed doesn't exist or contains typos)
+                // this way we can easily identify the bug and fix it
                 // otherwise we might be hiding this bug until gods know when...
                 //
                 var final = new List<GameFlowActionsData>(tmp);

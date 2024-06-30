@@ -7,7 +7,6 @@
                 "Loopable": false,
                 "Actions": [
                     {
-                        "TriggerConditions": [],
                         "ResultToExecute": [
                             {
                                 "ClassName": "LoadCoreSceneInstruction",
@@ -28,7 +27,6 @@
                 "Loopable": false,
                 "Actions": [
                     {
-                        "TriggerConditions": [],
                         "ResultToExecute": [
                             {
                                 "ClassName": "CheckSceneToLoadInstruction",
@@ -54,7 +52,6 @@
                 "Loopable": false,
                 "Actions": [
                     {
-                        "TriggerConditions": [],
                         "ResultToExecute": [
                             {
                                 "ClassName": "LoadSceneInstruction",
@@ -76,7 +73,6 @@
                 "Loopable": false,
                 "Actions": [
                     {
-                        "TriggerConditions": [],
                         "ResultToExecute": [
                             {
                                 "ClassName": "LoadSceneInstruction",
@@ -98,7 +94,6 @@
                 "Loopable": false,
                 "Actions": [
                     {
-                        "TriggerConditions": [],
                         "ResultToExecute": [
                             {
                                 "ClassName": "LoadSceneInstruction",
@@ -120,7 +115,6 @@
                 "Loopable": false,
                 "Actions": [
                     {
-                        "TriggerConditions": [],
                         "ResultToExecute": [
                             {
                                 "ClassName": "LoadSceneNoFlowInstruction",
