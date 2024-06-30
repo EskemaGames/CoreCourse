@@ -35,7 +35,7 @@ namespace EG
             // ------------------------------------------------
             private EG_TimerSystem timer = null;
             private EG_TimerSystem timerCore = null;
-            private EG_SceneChangerSystem sceneChangerSystem = null; //NEW
+            private EG_SceneChangerSystem sceneChangerSystem = null;
             
             private List<IDestroyable> destroyableSystems = new List<IDestroyable>(10);
             private List<IUpdateTimedSystems> updateTimedSystems = new List<IUpdateTimedSystems>(3);
