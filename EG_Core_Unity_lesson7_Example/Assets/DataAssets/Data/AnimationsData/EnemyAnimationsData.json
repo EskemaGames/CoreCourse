@@ -1,0 +1,49 @@
+{
+	"CharacterAnimations": [
+		{
+			"name": "OrcWarrior1",
+			"AnimationList": [
+				{
+					"PivotAnimatorName": "None",
+					"Animations": [
+						{
+							"AnimationName": "Orc_Hit",
+							"VariableName": "GotHit",
+							"ClipName": "Orc_Death",
+							"LayerName": "MovementsLayer",
+							"OffsetAnimation": 0.35,
+							"IsLoop": false
+						},
+						{
+							"AnimationName": "Orc_Death",
+							"VariableName": "DeadByExplosion",
+							"ClipName": "Orc_Death",
+							"LayerName": "MovementsLayer",
+							"OffsetAnimation": 0.35,
+							"IsLoop": false
+						},
+						{
+							"AnimationName": "Orc_Death02",
+							"VariableName": "Dead",
+							"ClipName": "Orc_Death02",
+							"LayerName": "MovementsLayer",
+							"OffsetAnimation": 0.2,
+							"IsLoop": false
+						},
+						{
+							"AnimationName": "Combo1",
+							"ClipName": "Orc_Attack01",
+							"VariableName": "Shoot1",
+							"LayerName": "MovementsLayer",
+							"OffsetAnimation": 0.32,
+							"IsLoop": false
+						}
+					]
+				}
+			]
+		}
+
+		
+		
+	]
+}

@@ -1,0 +1,112 @@
+{
+	"CharacterAnimations": [
+		{
+			"name": "MainCharacter",
+			"AnimationList": [
+				{
+					"PivotAnimatorName": "None",
+					"Animations": [
+						{
+							"AnimationName": "infantry_throw_grenade",
+							"VariableName": "SecondaryShoot",
+							"ClipName": "infantry_throw_grenade",
+							"LayerName": "Shooting",
+							"OffsetAnimation": 0.55,
+							"IsLoop": false
+						},
+						{
+							"AnimationName": "infantry_combat_shoot",
+							"ClipName": "infantry_combat_shoot",
+							"VariableName": "Shoot",
+							"LayerName": "Shooting",
+							"OffsetAnimation": 0.0,
+							"IsLoop": true
+						},
+						{
+							"AnimationName": "shoot",
+							"ClipName": "",
+							"VariableName": "EndShoot",
+							"LayerName": "Shooting",
+							"OffsetAnimation": 0.0,
+							"IsLoop": false
+						},
+						{
+							"AnimationName": "infantry_take_damage",
+							"VariableName": "GotHit",
+							"ClipName": "infantry_take_damage",
+							"LayerName": "Shooting",
+							"OffsetAnimation": 0.35,
+							"IsLoop": false
+						},
+						{
+							"AnimationName": "infantry_combat_roll",
+							"VariableName": "Roll",
+							"ClipName": "infantry_combat_roll",
+							"LayerName": "MovementsLayer",
+							"OffsetAnimation": 0.3,
+							"IsLoop": false
+						},
+						{
+							"AnimationName": "infantry_death_D",
+							"VariableName": "DeadByExplosion",
+							"ClipName": "infantry_death_D",
+							"LayerName": "MovementsLayer",
+							"OffsetAnimation": 0.35,
+							"IsLoop": false
+						},
+						{
+							"AnimationName": "infantry_death_B",
+							"VariableName": "Dead",
+							"ClipName": "infantry_death_B",
+							"LayerName": "MovementsLayer",
+							"OffsetAnimation": 0.2,
+							"IsLoop": false
+						},
+						{
+							"AnimationName": "infantry_combat_reload",
+							"VariableName": "Reload",
+							"ClipName": "infantry_combat_reload",
+							"LayerName": "Shooting",
+							"OffsetAnimation": 2.7,
+							"IsLoop": false
+						},
+						{
+							"AnimationName": "infantry_combat_run",
+							"VariableName": "Init",
+							"ClipName": "infantry_combat_run",
+							"LayerName": "Intro",
+							"OffsetAnimation": 0.1,
+							"IsLoop": false
+						},
+						{
+							"AnimationName": "infantry_interact_B",
+							"VariableName": "Interact",
+							"ClipName": "infantry_interact_B",
+							"LayerName": "Intro",
+							"OffsetAnimation": 0.1,
+							"IsLoop": true
+						},
+						{
+							"AnimationName": "infantry_interact_B",
+							"VariableName": "EndInteract",
+							"ClipName": "infantry_interact_B",
+							"LayerName": "Intro",
+							"OffsetAnimation": 0.1,
+							"IsLoop": false
+						},
+						{
+							"AnimationName": "stun",
+							"ClipName": "infantry_stun",
+							"VariableName": "Stun",
+							"LayerName": "MovementsLayer",
+							"OffsetAnimation": 0.15,
+							"OffsetEndAnimation": 0.15,
+							"IsLoop" : false
+						}
+					]
+				}
+			]
+		}
+		
+	]
+}

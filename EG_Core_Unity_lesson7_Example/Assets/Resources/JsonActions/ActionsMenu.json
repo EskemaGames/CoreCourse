@@ -1,0 +1,26 @@
+{
+	"ActionsList": [
+		{
+			"WaitForCompletion": true,
+			"Name": "ActionLoadStuff"
+		},
+		{
+			"WaitForCompletion": true,
+			"Name": "ActionDoMoreLoadStuff",
+			"Dependencies": [
+				{
+					"Name": "ActionLoadStuff"
+				}
+			]
+		},
+		{
+			"WaitForCompletion": true,
+			"Name": "ActionInitScreenController",
+			"Dependencies": [
+				{
+					"Name": "ActionDoMoreLoadStuff"
+				}
+			]
+		}
+	]
+}
